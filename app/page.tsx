@@ -69,12 +69,12 @@ export default function Page() {
           <img 
             src="/maskot 1 mawa.png" 
             alt="Maskot Mawa Kismawa" 
-            className="absolute -bottom-9 -left-3 w-20 sm:w-44 h-auto drop-shadow-lg z-10 pointer-events-none transform -rotate-6 transition-transform duration-300 hover:scale-105" 
+            className="absolute -bottom-4 -left-4 w-25 sm:w-36 md:w-40 h-auto drop-shadow-lg z-10 pointer-events-none transform -rotate-6 transition-transform duration-300 hover:scale-105" 
           />
           <img 
             src="/maskot 2 miwa.png" 
             alt="Maskot Miwa Kismawa" 
-            className="absolute -bottom-9 -right-3 w-20 sm:w-44 h-auto drop-shadow-lg z-10 pointer-events-none transform rotate-6 transition-transform duration-300 hover:scale-105" 
+            className="absolute -bottom-4 -right-4 w-25 sm:w-36 md:w-40 h-auto drop-shadow-lg z-10 pointer-events-none transform rotate-6 transition-transform duration-300 hover:scale-105" 
           />
 
           {/* Logo with Ring & Glow */}
