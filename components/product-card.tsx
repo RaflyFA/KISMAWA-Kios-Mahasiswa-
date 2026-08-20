@@ -112,24 +112,11 @@ export function ProductCard({ product, formatPrice }: ProductCardProps) {
               <ChevronRight className="h-4 w-4" />
             </button>
 
-            {/* Slide Index Badge & Dots Indicator */}
-            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1 z-10 bg-slate-900/40 backdrop-blur-xs px-2 py-0.5 rounded-full">
-              {images.length <= 5 ? (
-                images.map((_, idx) => (
-                  <span
-                    key={idx}
-                    className={`h-1.5 rounded-full transition-all duration-300 ${
-                      currentImgIndex === idx
-                        ? "w-3 bg-[#00ced0]"
-                        : "w-1.5 bg-white/70"
-                    }`}
-                  />
-                ))
-              ) : (
-                <span className="text-[9px] font-bold text-white tracking-wider">
-                  {currentImgIndex + 1}/{images.length}
-                </span>
-              )}
+            {/* Slide Index Badge */}
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center z-10 bg-slate-900/40 backdrop-blur-xs px-2.5 py-0.5 rounded-full">
+              <span className="text-[10px] font-bold text-white tracking-wider">
+                {currentImgIndex + 1}/{images.length}
+              </span>
             </div>
           </>
         )}

@@ -22,15 +22,20 @@ const customBuketDescription = [
 const standardDescription = "Bisa request warna dan kombinasi produk"
 
 export const products: Product[] = [
-  // Buket Category
+  // Buket Category - Buket Kawat Bulu (35k -> 50k)
   {
-    id: "1",
-    slug: "buket-kawat-bulu-50k",
-    name: "Buket Kawat Bulu 50k",
-    price: 50000,
+    id: "3",
+    slug: "buket-kawat-bulu-35k",
+    name: "Buket Kawat Bulu 35k",
+    price: 35000,
     category: "Buket",
-    image: "/buket kawat bulu 50k.png",
-    images: ["/buket kawat bulu 50k.png"],
+    image: "/buket kawat bulu 35k.png",
+    images: [
+      "/buket kawat bulu 35k.png",
+      "/buket kawat bulu 35k 1.png",
+      "/buket kawat bulu 35k 2.png",
+      "/buket kawat bulu 35k 3.png",
+    ],
     description: standardDescription,
   },
   {
@@ -52,20 +57,30 @@ export const products: Product[] = [
     description: standardDescription,
   },
   {
-    id: "3",
-    slug: "buket-kawat-bulu-35k",
-    name: "Buket Kawat Bulu 35k",
-    price: 35000,
+    id: "11",
+    slug: "buket-kawat-bulu-45k",
+    name: "Buket Kawat Bulu 45k",
+    price: 45000,
     category: "Buket",
-    image: "/buket kawat bulu 35k.png",
+    image: "/buket kawat bulu 45k.png",
+    images: ["/buket kawat bulu 45k.png"],
+    description: standardDescription,
+  },
+  {
+    id: "1",
+    slug: "buket-kawat-bulu-50k",
+    name: "Buket Kawat Bulu 50k",
+    price: 50000,
+    category: "Buket",
+    image: "/buket kawat bulu 50k.png",
     images: [
-      "/buket kawat bulu 35k.png",
-      "/buket kawat bulu 35k 1.png",
-      "/buket kawat bulu 35k 2.png",
-      "/buket kawat bulu 35k 3.png",
+      "/buket kawat bulu 50k.png",
+      "/buket kawat bulu 50k 1.png",
     ],
     description: standardDescription,
   },
+
+  // Buket Category - Buket Snack (35k -> 40k)
   {
     id: "4",
     slug: "buket-snack-35k",
@@ -76,6 +91,8 @@ export const products: Product[] = [
     images: [
       "/buket snack 35k.png",
       "/buket snack 35k 1.png",
+      "/buket snack 35k 2.png",
+      "/buket snack 35k 3.png",
     ],
     description: standardDescription,
   },
@@ -89,9 +106,129 @@ export const products: Product[] = [
     images: [
       "/buket snack 40k.png",
       "/buket snack 40k 1.png",
+      "/buket snack 40k 2.png",
+      "/buket snack 40k 3.png",
+      "/buket snack 40k 4.png",
+      "/buket snack 40k 5.png",
     ],
     description: standardDescription,
   },
+
+  // Buket Category - Buket Combine (40k -> 50k)
+  {
+    id: "12",
+    slug: "buket-combine-40k",
+    name: "Buket Combine 40k",
+    price: 40000,
+    category: "Buket",
+    image: "/buket combine 40k.png",
+    images: ["/buket combine 40k.png"],
+    description: standardDescription,
+  },
+  {
+    id: "13",
+    slug: "buket-combine-45k",
+    name: "Buket Combine 45k",
+    price: 45000,
+    category: "Buket",
+    image: "/buket combine 45k.png",
+    images: ["/buket combine 45k.png"],
+    description: standardDescription,
+  },
+  {
+    id: "14",
+    slug: "buket-combine-50k",
+    name: "Buket Combine 50k",
+    price: 50000,
+    category: "Buket",
+    image: "/buket combine 50k.png",
+    images: ["/buket combine 50k.png"],
+    description: standardDescription,
+  },
+
+  // Buket Category - Buket Artificial (35k -> 90k)
+  {
+    id: "15",
+    slug: "buket-artificial-35k",
+    name: "Buket Artificial 35k",
+    price: 35000,
+    category: "Buket",
+    image: "/buket artificial 35k.png",
+    images: ["/buket artificial 35k.png"],
+    description: standardDescription,
+  },
+  {
+    id: "16",
+    slug: "buket-artificial-40k",
+    name: "Buket Artificial 40k",
+    price: 40000,
+    category: "Buket",
+    image: "/buket artificial 40k.png",
+    images: [
+      "/buket artificial 40k.png",
+      "/buket artificial 40k 1.png",
+    ],
+    description: standardDescription,
+  },
+  {
+    id: "17",
+    slug: "buket-artificial-60k",
+    name: "Buket Artificial 60k",
+    price: 60000,
+    category: "Buket",
+    image: "/buket artificial 60k.png",
+    images: [
+      "/buket artificial 60k.png",
+      "/buket artificial 60k 1.png",
+    ],
+    description: standardDescription,
+  },
+  {
+    id: "18",
+    slug: "buket-artificial-65k",
+    name: "Buket Artificial 65k",
+    price: 65000,
+    category: "Buket",
+    image: "/buket artificial 65k.png",
+    images: [
+      "/buket artificial 65k.png",
+      "/buket artificial 65k 1.png",
+      "/buket artificial 65k 2.png",
+    ],
+    description: standardDescription,
+  },
+  {
+    id: "19",
+    slug: "buket-artificial-70k",
+    name: "Buket Artificial 70k",
+    price: 70000,
+    category: "Buket",
+    image: "/buket artificial 70k.png",
+    images: ["/buket artificial 70k.png"],
+    description: standardDescription,
+  },
+  {
+    id: "20",
+    slug: "buket-artificial-80k",
+    name: "Buket Artificial 80k",
+    price: 80000,
+    category: "Buket",
+    image: "/buket artificial 80k.png",
+    images: ["/buket artificial 80k.png"],
+    description: standardDescription,
+  },
+  {
+    id: "21",
+    slug: "buket-artificial-90k",
+    name: "Buket Artificial 90k",
+    price: 90000,
+    category: "Buket",
+    image: "/buket artificial 90k.png",
+    images: ["/buket artificial 90k.png"],
+    description: standardDescription,
+  },
+
+  // Buket Category - Buket Custom
   {
     id: "6",
     slug: "buket-custom-buku",
@@ -126,7 +263,7 @@ export const products: Product[] = [
     description: customBuketDescription,
   },
 
-  // Hampers Category
+  // Hampers Category (25k -> 30k)
   {
     id: "9",
     slug: "hampers-25k",

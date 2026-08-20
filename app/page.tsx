@@ -2,7 +2,7 @@
 
 import { useMemo, useState, useEffect } from "react"
 import { MessageCircle, MapPin, Sparkles, Clock, ChevronLeft, ChevronRight } from "lucide-react"
-import { buildWaLink } from "@/lib/constants"
+import { buildWaLink, getStoreStatus, StoreStatus } from "@/lib/constants"
 import { products } from "@/lib/kismawa-data"
 import { ProductCard } from "@/components/product-card"
 
@@ -42,12 +42,22 @@ const heroBanners = [
 export default function Page() {
   const [activeCategory, setActiveCategory] = useState("Semua")
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [storeStatus, setStoreStatus] = useState<StoreStatus>(getStoreStatus())
 
   useEffect(() => {
+    setStoreStatus(getStoreStatus())
+    const interval = setInterval(() => {
+      setStoreStatus(getStoreStatus())
+    }, 30000)
+
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroBanners.length)
     }, 4500)
-    return () => clearInterval(timer)
+
+    return () => {
+      clearInterval(interval)
+      clearInterval(timer)
+    }
   }, [])
 
   const categories = useMemo(() => ["Semua", ...new Set(products.map((product) => product.category))], [])
@@ -95,12 +105,24 @@ export default function Page() {
           </p>
 
           {/* Operational Hours Pill */}
-          <div className="relative z-10 mt-3.5 inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur-md px-4 py-1.5 text-xs font-semibold text-white ring-1 ring-white/25 shadow-inner">
+          <div
+            className={`relative z-10 mt-3.5 inline-flex items-center gap-2 rounded-full backdrop-blur-md px-4 py-1.5 text-xs font-semibold text-white shadow-inner ring-1 ${
+              storeStatus.isOpen
+                ? "bg-emerald-500/20 ring-emerald-400/40"
+                : "bg-rose-500/20 ring-rose-400/40"
+            }`}
+          >
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+              {storeStatus.isOpen ? (
+                <>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+                </>
+              ) : (
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-400"></span>
+              )}
             </span>
-            <span>Buka Hari Ini</span>
+            <span>{storeStatus.text}</span>
           </div>
         </header>
 
