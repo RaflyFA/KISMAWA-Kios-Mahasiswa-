@@ -3,7 +3,8 @@
 import { useMemo, useState, useEffect } from "react"
 import { MessageCircle, MapPin, Sparkles, Clock, ChevronLeft, ChevronRight } from "lucide-react"
 import { buildWaLink } from "@/lib/constants"
-import { getProductImage, products } from "@/lib/kismawa-data"
+import { products } from "@/lib/kismawa-data"
+import { ProductCard } from "@/components/product-card"
 
 function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -223,69 +224,13 @@ export default function Page() {
             </div>
           ) : (
             <div className="grid grid-cols-2 gap-3.5 sm:gap-4">
-              {filteredProducts.map((product) => {
-                const priceDisplay = product.isCustom || product.price === 0 
-                  ? "Custom" 
-                  : formatPrice.format(product.price)
-
-                return (
-                  <article 
-                    key={product.id} 
-                    className="group flex flex-col overflow-hidden rounded-2xl bg-white border border-slate-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#44668e]/10"
-                  >
-                    <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
-                      <img 
-                        src={getProductImage(product)} 
-                        alt={product.name} 
-                        width={400} 
-                        height={400} 
-                        loading="lazy" 
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" 
-                      />
-                      <span className="absolute top-2 left-2 rounded-lg bg-white/90 backdrop-blur-md px-2 py-0.5 text-[10px] font-bold text-[#44668e] shadow-xs">
-                        {product.category}
-                      </span>
-                    </div>
-
-                    <div className="flex flex-1 flex-col justify-between p-3 gap-2.5">
-                      <div>
-                        <h2 className="line-clamp-2 text-xs sm:text-sm font-bold leading-snug text-[#44668e] group-hover:text-[#00ced0] transition-colors">
-                          {product.name}
-                        </h2>
-
-                        {Array.isArray(product.description) ? (
-                          <ul className="mt-2 space-y-1 text-[10px] sm:text-[11px] text-[#44668e]/90 bg-slate-50 p-2 rounded-xl border border-slate-100 font-medium">
-                            {product.description.map((item, idx) => (
-                              <li key={idx} className="flex items-start gap-1 leading-tight">
-                                <span className="text-[#00ced0] font-bold shrink-0">•</span>
-                                <span>{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        ) : (
-                          <p className="mt-1 text-[11px] font-medium text-slate-500 leading-snug">
-                            {product.description}
-                          </p>
-                        )}
-
-                        <p className="mt-2 text-sm font-black text-[#00ced0]">
-                          {priceDisplay}
-                        </p>
-                      </div>
-
-                      <a 
-                        href={buildWaLink(product.name, priceDisplay)} 
-                        target="_blank" 
-                        rel="noreferrer" 
-                        className="inline-flex min-h-9 items-center justify-center gap-1.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] px-2.5 py-2 text-center text-xs font-extrabold text-white shadow-md shadow-[#25D366]/25 transition-all duration-200 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]"
-                      >
-                        <MessageCircle aria-hidden="true" className="h-4 w-4 shrink-0 fill-current text-white" />
-                        <span>Pesan via WA</span>
-                      </a>
-                    </div>
-                  </article>
-                )
-              })}
+              {filteredProducts.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  formatPrice={formatPrice}
+                />
+              ))}
             </div>
           )}
         </section>

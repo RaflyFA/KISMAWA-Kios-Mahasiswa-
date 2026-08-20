@@ -7,6 +7,7 @@ export interface Product {
   price: number
   category: ProductCategory
   image: string
+  images?: string[]
   isCustom?: boolean
   description?: string | string[]
 }
@@ -29,6 +30,7 @@ export const products: Product[] = [
     price: 50000,
     category: "Buket",
     image: "/buket kawat bulu 50k.png",
+    images: ["/buket kawat bulu 50k.png"],
     description: standardDescription,
   },
   {
@@ -38,6 +40,15 @@ export const products: Product[] = [
     price: 40000,
     category: "Buket",
     image: "/buket kawat bulu 40k.png",
+    images: [
+      "/buket kawat bulu 40k.png",
+      "/buket kawat bulu 40k 1.png",
+      "/buket kawat bulu 40k 2.png",
+      "/buket kawat bulu 40k 3.png",
+      "/buket kawat bulu 40k 4.png",
+      "/buket kawat bulu 40k 5.png",
+      "/buket kawat bulu 40k 6.png",
+    ],
     description: standardDescription,
   },
   {
@@ -47,6 +58,12 @@ export const products: Product[] = [
     price: 35000,
     category: "Buket",
     image: "/buket kawat bulu 35k.png",
+    images: [
+      "/buket kawat bulu 35k.png",
+      "/buket kawat bulu 35k 1.png",
+      "/buket kawat bulu 35k 2.png",
+      "/buket kawat bulu 35k 3.png",
+    ],
     description: standardDescription,
   },
   {
@@ -56,6 +73,10 @@ export const products: Product[] = [
     price: 35000,
     category: "Buket",
     image: "/buket snack 35k.png",
+    images: [
+      "/buket snack 35k.png",
+      "/buket snack 35k 1.png",
+    ],
     description: standardDescription,
   },
   {
@@ -65,6 +86,10 @@ export const products: Product[] = [
     price: 40000,
     category: "Buket",
     image: "/buket snack 40k.png",
+    images: [
+      "/buket snack 40k.png",
+      "/buket snack 40k 1.png",
+    ],
     description: standardDescription,
   },
   {
@@ -74,6 +99,7 @@ export const products: Product[] = [
     price: 0,
     category: "Buket",
     image: "/buket custome buku.png",
+    images: ["/buket custome buku.png"],
     isCustom: true,
     description: customBuketDescription,
   },
@@ -84,6 +110,7 @@ export const products: Product[] = [
     price: 0,
     category: "Buket",
     image: "/buket custome uang.png",
+    images: ["/buket custome uang.png"],
     isCustom: true,
     description: customBuketDescription,
   },
@@ -94,6 +121,7 @@ export const products: Product[] = [
     price: 0,
     category: "Buket",
     image: "/buket custome coklat.png",
+    images: ["/buket custome coklat.png"],
     isCustom: true,
     description: customBuketDescription,
   },
@@ -106,6 +134,11 @@ export const products: Product[] = [
     price: 25000,
     category: "Hampers",
     image: "/hampers 25k.png",
+    images: [
+      "/hampers 25k.png",
+      "/hampers 25k 1.png",
+      "/hampers 25k 2.png",
+    ],
     description: standardDescription,
   },
   {
@@ -115,10 +148,23 @@ export const products: Product[] = [
     price: 30000,
     category: "Hampers",
     image: "/hampers 30k.png",
+    images: [
+      "/hampers 30k.png",
+      "/hampers 30k 1.png",
+      "/hampers 30k 2.png",
+    ],
     description: standardDescription,
   },
 ]
 
 export const getProductImage = (product: Product) => product.image
+
+export const getProductImages = (product: Product): string[] => {
+  if (product.images && product.images.length > 0) {
+    return product.images
+  }
+  return [product.image]
+}
+
 
 
