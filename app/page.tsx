@@ -5,6 +5,7 @@ import { MessageCircle, MapPin, Sparkles, Clock, ChevronLeft, ChevronRight } fro
 import { buildWaLink, getStoreStatus, StoreStatus } from "@/lib/constants"
 import { products } from "@/lib/kismawa-data"
 import { ProductCard } from "@/components/product-card"
+import { AudioPlayer } from "@/components/audio-player"
 
 function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -35,8 +36,9 @@ const formatPrice = new Intl.NumberFormat("id-ID", {
 
 const heroBanners = [
   { id: 1, src: "/gambar 1.jpg", alt: "Promo Kismawa 1" },
-  { id: 2, src: "/gambar 2.jpeg", alt: "Promo Kismawa 2" },
-  { id: 3, src: "/gambar 3.jpg", alt: "Promo Kismawa 3" },
+  { id: 4, src: "/gambar 4.jpg", alt: "Promo Kismawa 4" },
+  { id: 5, src: "/gambar 5.jpg", alt: "Promo Kismawa 5" },
+  { id: 6, src: "/gambar 6.jpg", alt: "Promo Kismawa 6" },
 ]
 
 export default function Page() {
@@ -72,6 +74,11 @@ export default function Page() {
         
         {/* Header Top Section with Hero Banner & Mascots */}
         <header className="relative bg-gradient-to-br from-[#44668e] via-[#3d5d83] to-[#2d496a] text-white pt-8 pb-7 px-6 text-center overflow-hidden rounded-b-[2rem]">
+          {/* Speaker Sound Controller Button (Fixed Position) */}
+          <div className="fixed top-4 right-4 z-50">
+            <AudioPlayer />
+          </div>
+
           {/* Subtle Decorative Background Bubbles */}
           <div className="absolute -top-10 -right-10 w-36 h-36 rounded-full bg-[#00ced0]/20 blur-xl pointer-events-none" />
           <div className="absolute -bottom-10 -left-10 w-36 h-36 rounded-full bg-[#6482a4]/30 blur-xl pointer-events-none" />
