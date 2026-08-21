@@ -137,7 +137,7 @@ export default function Page() {
             <div className="grid grid-cols-2 gap-2 text-xs text-[#44668e] bg-slate-50/80 p-2.5 rounded-xl border border-slate-100 font-medium">
               <div className="flex flex-col items-center">
                 <span className="font-bold text-[#44668e]">Senin - Jumat</span>
-                <span className="text-[#00ced0] font-extrabold mt-0.5">08.00 - 16.00 WIB</span>
+                <span className="text-[#00ced0] font-extrabold mt-0.5">08.00 - 20.00 WIB</span>
               </div>
               <div className="flex flex-col items-center border-l border-slate-200 pl-2">
                 <span className="font-bold text-[#44668e]">Sabtu</span>
